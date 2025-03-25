@@ -154,7 +154,6 @@ quiz = [
         "correct": 2
     }
 ]
-]
 
 # Inicialización del estado
 if 'quiz' not in st.session_state:
