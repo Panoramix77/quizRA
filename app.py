@@ -120,7 +120,7 @@ if 'quiz' not in st.session_state:
     st.session_state.submitted = False
 
 # Interfaz de la app
-st.title("Test de prueba de Razonamiento Aproximado (batería 2024)")
+st.title("Test de prueba de Razonamiento Aproximado (batería 2024) - Test")
 
 for i, q in enumerate(st.session_state.quiz, 1):
     st.subheader(f"Pregunta {i}: {q['question']}")
