@@ -181,7 +181,7 @@ if st.button("Finalizar Test"):
     st.write(f"Fallos: {fallos}/{total_preguntas}")
     st.write(f"No contestadas: {no_contestadas}/{total_preguntas}")
     st.write(f"Porcentaje de aciertos: {porcentaje:.2f}%")
-    st.write("Estas preguntas no son las definitivas, corresponden al año pasado.")
+    st.write("**Estas preguntas no son las definitivas, corresponden al año pasado.**")
     if st.button("Reiniciar"):
         st.session_state.clear()
         st.experimental_rerun()
