@@ -85,7 +85,7 @@ quiz = [
     },
     {
         "question": "Sobre el método de Monte Carlo, indica la opción correcta:",
-        "options": ["Aplicarlo para casos sencillos, unidimensionales, no compensa", "Al calcular una aproximación, no permite resolver problemas complejos", "Es buena elección para problemas unidimensionales", "Ninguna es correcta"],
+        "options": ["Aplicarlo para casos sencillos, unidimensionales, no compensa", "Al calcular una aproximación, no permite resolver problemas complejos", "Es buena elección para problemas unidimensionales", "Ninguna es correctas correcta"],
         "correct": 1
     },
     {
@@ -156,31 +156,17 @@ for i, q in enumerate(st.session_state.quiz, 1):
             st.write("❌ Respuesta confirmada como incorrecta.")
 
 # Botón para finalizar el test
-if st.button("Finalizar Test"):
-    st.session_state.submitted = True
-    aciertos = 0
-    fallos = 0
-    no_contestadas = 0
-    
-    # Calcular aciertos, fallos y no contestadas
-    for q in st.session_state.quiz:
-        if q["confirmed"]:
-            if q["is_correct"]:
-                aciertos += 1
-            else:
-                fallos += 1
-        else:
-            no_contestadas += 1
-    
-    total_preguntas = len(st.session_state.quiz)
-    porcentaje = (aciertos / total_preguntas) * 100 if total_preguntas > 0 else 0
-    
-    # Mostrar resultados
-    st.success(f"Test finalizado.")
-    st.write(f"Aciertos: {aciertos}/{total_preguntas}")
-    st.write(f"Fallos: {fallos}/{total_preguntas}")
-    st.write(f"No contestadas: {no_contestadas}/{total_preguntas}")
-    st.write(f"Porcentaje de aciertos: {porcentaje:.2f}%")
+if st.button("Finalizar test"):
+    if all(q["confirmed"] for q in st.session_state.quiz):
+        st.session_state.submitted = True
+    else:
+        st.warning("Por favor, confirma todas las respuestas antes de finalizar.")
+
+# Mostrar resultados finales
+if st.session_state.submitted:
+    percentage = (st.session_state.score / len(st.session_state.quiz)) * 100
+    st.success(f"Test finalizado. Tu puntuación: {st.session_state.score}/{len(st.session_state.quiz)}")
+    st.write(f"Porcentaje de aciertos: {percentage:.2f}%")
     st.write("**Estas preguntas no son las definitivas, corresponden al año pasado.**")
     if st.button("Reiniciar"):
         st.session_state.clear()
