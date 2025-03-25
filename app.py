@@ -167,7 +167,7 @@ if 'quiz' not in st.session_state:
     st.session_state.submitted = False
 
 # Interfaz de la aplicación
-st.title("Test de Razonamiento Aproximado")
+st.title("Test de Razonamiento Aproximado (Curso IA-ML 2025)")
 
 # Mostrar cada pregunta
 for i, q in enumerate(st.session_state.quiz, 1):
@@ -185,16 +185,16 @@ for i, q in enumerate(st.session_state.quiz, 1):
     # Botón "Corregir" para retroalimentación opcional
     if st.button("Corregir", key=f"check_q{i}"):
         if q["user_answer"] is None:
-            st.warning("Por favor, selecciona una opción antes de corregir.")
+            st.warning("Por favor, selecciona una opción antes, que no soy adivino!.")
         else:
             if q["options_shuffled"].index(q["user_answer"]) + 1 == q["correct_index"]:
-                st.success("¡Correcto!")
+                st.success("¡Opa! ¡Correcto!")
             else:
                 correct_answer = q["options"][q["correct"] - 1]
-                st.error(f"Incorrecto. La respuesta correcta es: {correct_answer}")
+                st.error(f"Vaya tela... la respuesta correcta es: {correct_answer}. Revísalo anda!")
 
 # Botón para finalizar el test
-if st.button("Finalizar Test"):
+if st.button("Finalizar el Test"):
     st.session_state.submitted = True
 
 # Mostrar resultados al finalizar
