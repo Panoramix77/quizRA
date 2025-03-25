@@ -163,60 +163,68 @@ if 'quiz' not in st.session_state:
         q["options_shuffled"] = q["options"].copy()
         random.shuffle(q["options_shuffled"])
         q["correct_index"] = q["options_shuffled"].index(q["options"][q["correct"] - 1]) + 1
-        q["user_answer"] = None
-        q["confirmed"] = False
-        q["is_correct"] = None
-    st.session_state.score = 0
+        q["user_answer"] = None  # Respuesta del usuario
     st.session_state.submitted = False
 
-# Interfaz de la app
-st.title("Test de prueba de Razonamiento Aproximado (Curso IA/ML 2025)")
+# Interfaz de la aplicación
+st.title("Test de Razonamiento Aproximado")
 
+# Mostrar cada pregunta
 for i, q in enumerate(st.session_state.quiz, 1):
     st.subheader(f"Pregunta {i}: {q['question']}")
     
-    # Selección de respuesta
+    # Selección de respuesta por el usuario
     answer = st.radio(
         "Selecciona una opción",
         q["options_shuffled"],
         key=f"q{i}",
         index=None if q["user_answer"] is None else q["options_shuffled"].index(q["user_answer"])
     )
-    q["user_answer"] = answer
-
-    # Botón de confirmación para cada pregunta
-    if st.button("Confirmar respuesta", key=f"confirm_q{i}"):
-        if q["user_answer"] is not None:
-            q["confirmed"] = True
-            q["is_correct"] = (q["options_shuffled"].index(q["user_answer"]) + 1 == q["correct_index"])
-            if q["is_correct"]:
+    q["user_answer"] = answer  # Guardar la respuesta seleccionada
+    
+    # Botón "Corregir" para retroalimentación opcional
+    if st.button("Corregir", key=f"check_q{i}"):
+        if q["user_answer"] is None:
+            st.warning("Por favor, selecciona una opción antes de corregir.")
+        else:
+            if q["options_shuffled"].index(q["user_answer"]) + 1 == q["correct_index"]:
                 st.success("¡Correcto!")
-                st.session_state.score += 1
             else:
                 correct_answer = q["options"][q["correct"] - 1]
                 st.error(f"Incorrecto. La respuesta correcta es: {correct_answer}")
-        else:
-            st.warning("Por favor, selecciona una opción antes de confirmar.")
-
-    # Mostrar estado de la pregunta
-    if q["confirmed"]:
-        if q["is_correct"]:
-            st.write("✅ Respuesta confirmada como correcta.")
-        else:
-            st.write("❌ Respuesta confirmada como incorrecta.")
 
 # Botón para finalizar el test
-if st.button("Finalizar test"):
-    if all(q["confirmed"] for q in st.session_state.quiz):
-        st.session_state.submitted = True
-    else:
-        st.warning("Por favor, confirma todas las respuestas antes de finalizar.")
+if st.button("Finalizar Test"):
+    st.session_state.submitted = True
 
-# Mostrar resultados finales
+# Mostrar resultados al finalizar
 if st.session_state.submitted:
-    percentage = (st.session_state.score / len(st.session_state.quiz)) * 100
-    st.success(f"Test finalizado. Tu puntuación: {st.session_state.score}/{len(st.session_state.quiz)}")
-    st.write(f"Porcentaje de aciertos: {percentage:.2f}%")
+    total_questions = len(st.session_state.quiz)
+    correct = 0
+    incorrect = 0
+    unanswered = 0
+    
+    # Evaluar todas las respuestas
+    for q in st.session_state.quiz:
+        if q["user_answer"] is None:
+            unanswered += 1
+        elif q["options_shuffled"].index(q["user_answer"]) + 1 == q["correct_index"]:
+            correct += 1
+        else:
+            incorrect += 1
+    
+    # Calcular porcentajes
+    percentage_correct = (correct / total_questions) * 100 if total_questions > 0 else 0
+    percentage_incorrect = (incorrect / total_questions) * 100 if total_questions > 0 else 0
+    percentage_unanswered = (unanswered / total_questions) * 100 if total_questions > 0 else 0
+    
+    # Mostrar resultados
+    st.success(f"Test finalizado. Tu puntuación: {correct}/{total_questions}")
+    st.write(f"**Número de aciertos:** {correct} ({percentage_correct:.2f}%)")
+    st.write(f"**Número de fallos:** {incorrect} ({percentage_incorrect:.2f}%)")
+    st.write(f"**Preguntas no contestadas:** {unanswered} ({percentage_unanswered:.2f}%)")
+    
+    # Opción para reiniciar
     if st.button("Reiniciar"):
         st.session_state.clear()
         st.experimental_rerun()
