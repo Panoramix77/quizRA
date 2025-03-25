@@ -171,7 +171,7 @@ if 'quiz' not in st.session_state:
     st.session_state.submitted = False
 
 # Interfaz de la app
-st.title("Test de prueba de Razonamiento Aproximado (batería 2024)")
+st.title("Test de prueba de Razonamiento Aproximado (Curso IA/ML 2025)")
 
 for i, q in enumerate(st.session_state.quiz, 1):
     st.subheader(f"Pregunta {i}: {q['question']}")
@@ -218,7 +218,6 @@ if st.session_state.submitted:
     percentage = (st.session_state.score / len(st.session_state.quiz)) * 100
     st.success(f"Test finalizado. Tu puntuación: {st.session_state.score}/{len(st.session_state.quiz)}")
     st.write(f"Porcentaje de aciertos: {percentage:.2f}%")
-    st.write("**Estas preguntas no son las definitivas, corresponden al año pasado.**")
     if st.button("Reiniciar"):
         st.session_state.clear()
         st.experimental_rerun()
