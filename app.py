@@ -4,105 +4,156 @@ import random
 # Lista de preguntas
 quiz = [
     {
-        "question": "Se basa en el uso de números aleatorios y probabilidad estadística. Estamos hablando de:",
-        "options": ["Método de Monte Carlo", "Redes Bayesianas", "Distribución Gaussiana", "Ley de Murphy"],
+        "question": "¿Qué caracteriza al razonamiento aproximado?",
+        "options": ["Se basa únicamente en reglas estrictas y precisas", "Obtiene conclusiones a partir de premisas con un grado de incertidumbre", "Es un sistema determinista sin variaciones", "Solo se aplica en entornos matemáticos"],
+        "correct": 2
+    },
+    {
+        "question": "¿Por qué la lógica formal es menos flexible que el razonamiento aproximado?",
+        "options": ["Porque no permite alteraciones en el modelo", "Porque siempre incluye incertidumbre", "Porque se basa en heurísticas", "Porque no utiliza premisas"],
         "correct": 1
     },
     {
-        "question": "¿Cuáles son los componentes de los sistemas basados en reglas?",
-        "options": ["Conocimiento, almacenaje y diferencias", "Base de conocimiento, Base de datos y mecanismos de inferencia", "Bases, reglas y normas", "Ninguna es correcta"],
+        "question": "¿Cuál de las siguientes es una fuente de incertidumbre?",
+        "options": ["Información precisa y completa", "Agentes del mundo real no deterministas", "Modelos perfectos y exactos", "Sistemas sin variables externas"],
         "correct": 2
     },
     {
-        "question": "Selecciona la respuesta correcta con respecto a los mecanismos basados en reglas:",
-        "options": ["En el “modus ponens” tenemos las premisas y las normas", "Son poco eficaces aunque las reglas cubran las entradas almacenadas en la BD", "Son mecanismos poco costosos de ejecutar dada su simplicidad", "Se pueden considerar como la forma más compleja de representar sistemas de IA"],
+        "question": "¿Qué tipo de razonamiento utiliza la lógica formal?",
+        "options": ["Inductivo", "Deductivo", "Aproximado", "Heurístico"],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es una característica del razonamiento aproximado en comparación con la lógica formal?",
+        "options": ["Mayor rigor y precisión", "Menos flexibilidad", "Uso de heurísticas y aproximaciones", "Aplicación solo en matemáticas"],
         "correct": 3
     },
     {
-        "question": "¿Cuáles son las fuentes de incertidumbre en el razonamiento aproximado?",
-        "options": ["Deficiencias de la información, agentes del mundo real y deficiencias de las realidades sociales", "Deficiencias de la información, agentes del mundo real y deficiencia de los modelos que intentan explicar el problema", "Agentes del mundo real, deficiencias de la información y realidades sociopolíticas de la posmodernidad", "Deficiencias en el sistema ideológico neoliberal, agentes del mundo distópico y deficiencias del idealismo político"],
+        "question": "¿Qué ámbito de aplicación se asocia más al razonamiento aproximado?",
+        "options": ["Matemáticas puras", "Negocios y ciencias sociales", "Física teórica", "Química experimental"],
         "correct": 2
     },
     {
-        "question": "¿Cuál de las siguientes opciones describe mejor el Método Monte Carlo?",
-        "options": ["Un método de resolución numérica de ecuaciones diferenciales", "Un método de estimación estadística basado en la generación de números aleatorios", "Un método de clasificación de datos basado en árboles de decisión", "Un método de interpolación de datos a partir de puntos discretos"],
+        "question": "¿En qué se basa el método deductivo?",
+        "options": ["Observaciones del entorno para generar patrones", "Reglas generales para llegar a conclusiones específicas", "Probabilidades subjetivas", "Modelos incompletos"],
         "correct": 2
     },
     {
-        "question": "¿En teoría de grafos e informática qué es un DAG?",
-        "options": ["Digital Agreement Graphics", "Un grafo dirigido en el que no hay ciclos", "Diseño Adquirido de Grafos", "Ninguna de las anteriores"],
+        "question": "¿Qué principio lógico es la base de los sistemas basados en reglas?",
+        "options": ["Teorema de Bayes", "Modus Ponens", "Lógica difusa", "Combinatoria evidencial"],
         "correct": 2
     },
     {
-        "question": "La lógica difusa sirve para:",
-        "options": ["Poder cuantificar la incertidumbre del mundo que nos rodea", "Poder calcular la probabilidad que ocurra un suceso no aleatorio", "Establecer reglas de funcionamiento del mundo abstracto", "Establece los principios de funcionamiento de la naturaleza humana"],
+        "question": "¿Cuál es un componente principal de un sistema basado en reglas?",
+        "options": ["Base de conocimiento", "Red neuronal", "Algoritmo de aprendizaje profundo", "Simulación de Monte Carlo"],
         "correct": 1
     },
     {
-        "question": "¿Qué son las redes bayesianas?",
-        "options": ["Son representaciones de mecanismos poco costosos de ejecutar dada su simplicidad", "Son estructuras matemáticas representadas por nodos dependientes", "Son representaciones a través de grafos acíclicos dirigidos, donde los nodos representan variables aleatorias y los arcos sus dependencias", "Son las representaciones lógicas basadas en la Ley de Bayes"],
-        "correct": 3
-    },
-    {
-        "question": "Es la probabilidad de una variable aleatoria basada en datos del experimento, es decir, después de considerar la evidencia, estamos hablando de:",
-        "options": ["Probabilidad condicionada", "Probabilidad conjunta", "Probabilidad posterior", "Todas son correctas"],
-        "correct": 3
-    },
-    {
-        "question": "Redes bayesianas (Grafos acíclicos). Indica la falsa:",
-        "options": ["Un grafo se compone de vértices y aristas, con cada arista apuntando al vértice siguiente", "Se considera que un grafo es dirigido cuando todas las direcciones son consistentes y los vértices tienen un orden lineal", "Un DAG es un grafo dirigido con múltiples ciclos", "Se considera que un grafo es acíclico cuando sigue las direcciones nunca conduce a un bucle cerrado"],
-        "correct": 3
-    },
-    {
-        "question": "Sobre la Teoría de Dempster-Shafer:",
-        "options": ["Un modelo de clasificación no supervisada para la segmentación de imágenes", "Es una generalización del método bayesiano donde se combinan entre sí todas las posibilidades a las que nos podemos enfrentar en un problema dado", "Una técnica de reducción de dimensionalidad para datos de alta dimensionalidad", "Todas las anteriores son correctas"],
+        "question": "¿Qué hace el mecanismo de inferencia en un sistema basado en reglas?",
+        "options": ["Almacena datos", "Aplica las reglas para tomar decisiones", "Genera gráficos", "Resuelve conflictos automáticamente"],
         "correct": 2
     },
     {
-        "question": "Sobre el método de Aceptación-Rechazo:",
-        "options": ["Se puede enfocar aplicando el método de Monte Carlo", "Consiste en la generación sistemática de puntos aleatorios en un determinado rango", "Permite la aproximación del área de una determinada región", "Todas las anteriores son correctas"],
+        "question": "¿Cuál es una ventaja de los sistemas basados en reglas?",
+        "options": ["Capacidad de aprendizaje automático", "Transparencia en la toma de decisiones", "Complejidad en el mantenimiento", "Uso de conocimiento incompleto"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué desventaja tienen los sistemas basados en reglas?",
+        "options": ["Falta de flexibilidad", "Incapacidad para manejar grandes cantidades de datos", "Falta de aprendizaje de los datos utilizados", "Complejidad computacional extrema"],
+        "correct": 1
+    },
+    {
+        "question": "¿En qué se basan los métodos bayesianos?",
+        "options": ["Reglas estrictas sin incertidumbre", "Probabilidad subjetiva y el Teorema de Bayes", "Lógica difusa", "Sistemas deterministas"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué combina el Teorema de Bayes?",
+        "options": ["Conocimiento a priori con muestras obtenidas", "Reglas deductivas con heurísticas", "Probabilidades absolutas sin evidencia", "Datos incompletos sin análisis"],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué aportó Judea Pearl a los métodos bayesianos?",
+        "options": ["La teoría de Dempster-Shafer", "Las redes bayesianas", "La lógica difusa", "El método de Monte Carlo"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué diferencia trata de abordar la teoría de Dempster-Shafer?",
+        "options": ["Entre certeza y precisión", "Entre incertidumbre e ignorancia", "Entre deducción e inducción", "Entre reglas y heurísticas"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué representa el grado de creencia en DST?",
+        "options": ["Una probabilidad fija de 0 o 1", "Un valor entre 0 y 1 basado en evidencias", "Una estimación sin incertidumbre", "Un cálculo determinista"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué es el marco de discernimiento en DST?",
+        "options": ["Un conjunto de reglas fijas", "Todos los posibles subgrupos de hipótesis", "Una base de datos de premisas", "Un modelo gráfico probabilístico"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué permite cuantificar la lógica difusa?",
+        "options": ["Certeza absoluta", "Incertidumbre del mundo real", "Reglas estrictas", "Probabilidades fijas"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué componente NO es parte de la lógica difusa?",
+        "options": ["Proceso de fuzzyficación", "Mecanismo de inferencia", "Proceso de defuzzyficación", "Red neuronal profunda"],
         "correct": 4
     },
     {
-        "question": "¿Cuál de las siguientes opciones es una característica de las redes bayesianas?",
-        "options": ["Son modelos gráficos probabilísticos", "Son modelos de regresión lineal", "Son modelos de clasificación no supervisada", "Son modelos de aprendizaje por refuerzo"],
-        "correct": 1
-    },
-    {
-        "question": "¿Cuál de las siguientes opciones es una característica de la lógica difusa?",
-        "options": ["Permite tomar decisiones más o menos intensas en función de grados intermedios de cumplimiento de una premisa", "Es una lógica paraconsistente multivaluada en la cual los valores de verdad de las variables pueden ser cualquier número real comprendido entre 0 y 1", "Es una lógica que se utiliza para representar relaciones de dependencia entre variables aleatorias y para realizar inferencias sobre ellas", "Es una lógica que se utiliza para modelar sistemas complejos y no lineales"],
+        "question": "¿Qué inspira el nombre del método de Monte Carlo?",
+        "options": ["Un físico famoso", "El casino de Monte Carlo y su ruleta", "Una ecuación matemática", "Un experimento de laboratorio"],
         "correct": 2
     },
     {
-        "question": "¿Cuál es la principal ventaja del método de inferencia de Takagi-Sugeno sobre el método de inferencia de Mamdani?",
-        "options": ["El método de Takagi-Sugeno es más simple y fácil de implementar, siendo el más utilizado en lógica difusa", "El método de Takagi-Sugeno proporciona resultados más precisos", "El método de Takagi-Sugeno es más rápido en el procesamiento de datos", "La salida del sistema de Mamdani se representa como una expresión matemática"],
-        "correct": 3
+        "question": "¿Quiénes inventaron el método de Monte Carlo en los años 40?",
+        "options": ["Bayes y Laplace", "Ulam y von Neumann", "Pearl y Shafer", "Turing y Zadeh"],
+        "correct": 2
     },
     {
-        "question": "Indica las partes de un controlador difuso",
-        "options": ["Codificación o fuzzificación, base de conocimiento, motor de inferencia y decodificador o defuzzificador", "Codificación o fuzzificación, base de conocimiento y motor de inferencia", "Decodificador, base de conocimiento y motor diferencial", "Decodificador, base de conocimiento y motor de lógica difusa"],
+        "question": "¿Para qué es especialmente útil el método de Monte Carlo?",
+        "options": ["Problemas unidimensionales simples", "Problemas multidimensionales complejos", "Cálculos deterministas exactos", "Modelos sin incertidumbre"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué tipo de grafo usa una red bayesiana?",
+        "options": ["Grafo cíclico no dirigido", "Grafo acíclico dirigido (DAG)", "Grafo completo", "Grafo aleatorio"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué representa la probabilidad condicionada en una red bayesiana?",
+        "options": ["La probabilidad de un evento aislado", "La probabilidad de un evento dado otro evento", "La suma de todas las probabilidades", "Una estimación sin evidencia"],
+        "correct": 2
+    },
+    {
+        "question": "En el problema de Monty Hall, ¿qué aumenta la probabilidad de ganar?",
+        "options": ["Mantener la puerta inicial", "Cambiar a la puerta restante", "Elegir al azar sin cambiar", "No hacer ninguna elección"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué librería se usa en Python para redes bayesianas?",
+        "options": ["Scikit-learn", "Pgmpy", "Simpful", "Matplotlib"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué ofrece Variational Bayes frente a Monte Carlo?",
+        "options": ["Una solución analítica más eficiente", "Un muestreo más costoso", "Resultados menos precisos", "Una aproximación determinista"],
         "correct": 1
     },
     {
-        "question": "Sobre el método de Monte Carlo, indica la opción correcta:",
-        "options": ["Aplicarlo para casos sencillos, unidimensionales, no compensa", "Al calcular una aproximación, no permite resolver problemas complejos", "Es buena elección para problemas unidimensionales", "Ninguna es correctas correcta"],
-        "correct": 1
+        "question": "¿Qué mide la esperanza matemática en una variable aleatoria continua?",
+        "options": ["El valor más probable", "El valor medio del fenómeno", "La desviación estándar", "La probabilidad máxima"],
+        "correct": 2
     },
     {
-        "question": "Variational Bayes vs Monte Carlo",
-        "options": ["El método de Montecarlo es computacional más costoso", "Variational Bayes es adecuado para explorar muchos modelos en conjuntos grandes de datos", "El método de Monte Carlo proporciona una aproximación numérica al posterior exacto", "Todas las anteriores"],
-        "correct": 4
-    },
-    {
-        "question": "Indica la correcta sobre el método de inferencia Mamdani:",
-        "options": ["Para obtener una conclusión, se calcula la función de pertenencia a cada variable de entrada y, al final, se combinan todas las reglas en un único conjunto difuso para definir la pertenencia", "Es el método más utilizado en la lógica difusa", "La salida del sistema se representa como un conjunto difuso", "Todas son correctas"],
-        "correct": 4
-    },
-    {
-        "question": "¿Qué es un conjunto difuso?",
-        "options": ["Una función que indica el grado de pertenencia de un valor difuso", "Un conjunto de valores numéricos", "Un conjunto de variables lingüísticas", "Una función que indica el grado de pertenencia de un valor numérico para una variable lingüística o difusa"],
-        "correct": 4
+        "question": "¿Qué afirma la Ley Fuerte de los Grandes Números?",
+        "options": ["El error crece con más muestras", "La media converge a μ con muchas muestras", "Las variables son siempre independientes", "La distribución es siempre normal"],
+        "correct": 2
     }
+]
 ]
 
 # Inicialización del estado
