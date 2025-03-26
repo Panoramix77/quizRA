@@ -59,9 +59,9 @@ quiz = [
         "correct": 2
     },
     {
-        "question": "¿Qué desventaja tienen los sistemas basados en reglas?",
+        "question": "¿Qué desventaja tienen los sistemas basados en reglas? *Gracias David!",
         "options": ["Falta de flexibilidad", "Incapacidad para manejar grandes cantidades de datos", "Falta de aprendizaje de los datos utilizados", "Complejidad computacional extrema"],
-        "correct": 1
+        "correct": 3
     },
     {
         "question": "¿En qué se basan los métodos bayesianos?",
