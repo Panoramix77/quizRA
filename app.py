@@ -152,6 +152,31 @@ quiz = [
         "question": "¿Qué afirma la Ley Fuerte de los Grandes Números?",
         "options": ["El error crece con más muestras", "La media converge a μ con muchas muestras", "Las variables son siempre independientes", "La distribución es siempre normal"],
         "correct": 2
+    },
+    {
+        "question": "¿Cuál es la principal diferencia entre los métodos Mamdani y Takagi-Sugeno en términos de las salidas de las reglas difusas?",
+        "options": ["Mamdani usa valores numéricos y Takagi-Sugeno usa conjuntos difusos", "Mamdani usa conjuntos difusos y Takagi-Sugeno usa expresiones matemáticas", "Ambos usan conjuntos difusos, pero Mamdani es más rápido", "Ambos usan expresiones matemáticas, pero Takagi-Sugeno es más intuitivo"],
+        "correct": 2
+    },
+    {
+        "question": "¿En qué situación sería preferible usar el método de Mamdani en lugar de Takagi-Sugeno?",
+        "options": ["Cuando se necesita una respuesta numérica rápida sin defuzzificación", "Cuando se desea modelar un sistema basado en razonamiento humano intuitivo", "Cuando las reglas son exclusivamente matemáticas y lineales", "Cuando el sistema no requiere una base de conocimiento difusa"],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué diferencia hay en el proceso de defuzzificación entre Mamdani y Takagi-Sugeno?",
+        "options": ["Mamdani no requiere defuzzificación, mientras que Takagi-Sugeno sí", "Ambos requieren defuzzificación, pero Mamdani es más complejo", "Mamdani requiere defuzzificación, mientras que Takagi-Sugeno no", "Takagi-Sugeno requiere más pasos de defuzzificación que Mamdani"],
+        "correct": 3
+    },
+    {
+        "question": "¿Qué tipo de salidas son típicas en el método de Takagi-Sugeno?",
+        "options": ["Conjuntos difusos como 'propina generosa'", "Funciones trapezoidales o triangulares", "Constantes o funciones lineales de las entradas", "Valores probabilísticos entre 0 y 1 exclusivamente"],
+        "correct": 3
+    },
+    {
+        "question": "¿Cuál es una ventaja clave del método de Takagi-Sugeno en términos de eficiencia computacional?",
+        "options": ["Permite representar salidas con conjuntos difusos más complejos", "Elimina la necesidad de defuzzificación al usar valores numéricos directos", "Usa menos reglas difusas que el método de Mamdani", "Requiere menos variables lingüísticas en la entrada"],
+        "correct": 2
     }
 ]
 
